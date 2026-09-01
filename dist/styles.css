@@ -122,7 +122,7 @@ h1 em { color: var(--accent); font-family: Georgia, serif; font-weight: 400; }
 .contact-inner > .eyebrow { color: #173725; }
 .contact-inner > .eyebrow span { background: #173725; }
 .contact-inner > p { color: #315642; }
-.contact-links { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 50px; border-top: 1px solid rgba(7,16,14,.2); }
+.contact-links { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 50px; border-top: 1px solid rgba(7,16,14,.2); }
 .contact-links a { display: flex; justify-content: space-between; padding: 24px 6px; border-bottom: 1px solid rgba(7,16,14,.2); font-weight: 800; text-decoration: none; }
 .contact-links a + a { margin-left: 28px; }
 .contact-inner small { display: block; margin-top: 18px; color: #315642; }
