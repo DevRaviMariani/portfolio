@@ -1,1 +1,120 @@
-const h=document.querySelector('[data-header]'),m=document.querySelector('[data-menu]'),n=document.querySelector('[data-nav]');function close(){n.classList.remove('open');m.setAttribute('aria-expanded','false');document.body.style.overflow=''}m.addEventListener('click',()=>{let o=m.getAttribute('aria-expanded')==='true';if(o)return close();n.classList.add('open');m.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));addEventListener('keydown',e=>e.key==='Escape'&&close());addEventListener('scroll',()=>h.classList.toggle('scrolled',scrollY>18));document.querySelector(`[data-page-link="${document.body.dataset.page}"]`)?.classList.add('active');document.querySelector('[data-year]').textContent=new Date().getFullYear();const ob=new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>ob.observe(e));const c=document.querySelector('#particles');if(c&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const x=c.getContext('2d');let ps=[],w,hg,d=Math.min(devicePixelRatio,2);function size(){w=innerWidth;hg=innerHeight;c.width=w*d;c.height=hg*d;c.style.width=w+'px';c.style.height=hg+'px';x.setTransform(d,0,0,d,0,0);ps=Array.from({length:Math.min(65,Math.floor(w/18))},()=>({x:Math.random()*w,y:Math.random()*hg,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18}))}function draw(){x.clearRect(0,0,w,hg);for(const p of ps){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>hg)p.vy*=-1;x.fillStyle='#9d7dff88';x.beginPath();x.arc(p.x,p.y,1.2,0,7);x.fill()}for(let i=0;i<ps.length;i++)for(let j=i+1;j<ps.length;j++){let a=ps[i],b=ps[j],q=Math.hypot(a.x-b.x,a.y-b.y);if(q<120){x.strokeStyle=`rgba(130,103,255,${(1-q/120)*.14})`;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}requestAnimationFrame(draw)}addEventListener('resize',size);size();draw()}
+const theme = document.createElement("link");
+theme.rel = "stylesheet";
+theme.href = "./theme.css";
+document.head.appendChild(theme);
+
+const header = document.querySelector("[data-header]");
+const menu = document.querySelector("[data-menu]");
+const navigation = document.querySelector("[data-nav]");
+const navigationLinks = [...navigation.querySelectorAll("a")];
+
+function closeMenu({ restoreFocus = false } = {}) {
+  navigation.classList.remove("open");
+  menu.setAttribute("aria-expanded", "false");
+  menu.setAttribute("aria-label", "Abrir menu");
+  document.body.classList.remove("menu-open");
+  document.body.style.overflow = "";
+  if (restoreFocus) menu.focus();
+}
+
+function openMenu() {
+  navigation.classList.add("open");
+  menu.setAttribute("aria-expanded", "true");
+  menu.setAttribute("aria-label", "Fechar menu");
+  document.body.classList.add("menu-open");
+  document.body.style.overflow = "hidden";
+  navigationLinks[0].focus();
+}
+
+menu.addEventListener("click", () => {
+  const isOpen = menu.getAttribute("aria-expanded") === "true";
+  isOpen ? closeMenu() : openMenu();
+});
+
+navigationLinks.forEach((link) => link.addEventListener("click", closeMenu));
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeMenu({ restoreFocus: true });
+  if (event.key === "Tab" && navigation.classList.contains("open")) {
+    const focusable = [menu, ...navigationLinks];
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+});
+
+window.addEventListener("scroll", () => header.classList.toggle("scrolled", scrollY > 18));
+document.querySelector(`[data-page-link="${document.body.dataset.page}"]`)?.classList.add("active");
+document.querySelector("[data-year]").textContent = new Date().getFullYear();
+
+const observer = new IntersectionObserver((entries, currentObserver) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add("visible");
+    currentObserver.unobserve(entry.target);
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+
+const canvas = document.querySelector("#particles");
+if (canvas && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const context = canvas.getContext("2d");
+  let points = [];
+  let width = 0;
+  let height = 0;
+  const ratio = Math.min(devicePixelRatio, 2);
+
+  function resizeCanvas() {
+    width = innerWidth;
+    height = innerHeight;
+    canvas.width = width * ratio;
+    canvas.height = height * ratio;
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    context.setTransform(ratio, 0, 0, ratio, 0, 0);
+    points = Array.from({ length: Math.min(55, Math.floor(width / 22)) }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.14,
+      vy: (Math.random() - 0.5) * 0.14
+    }));
+  }
+
+  function drawParticles() {
+    context.clearRect(0, 0, width, height);
+    points.forEach((point) => {
+      point.x += point.vx;
+      point.y += point.vy;
+      if (point.x < 0 || point.x > width) point.vx *= -1;
+      if (point.y < 0 || point.y > height) point.vy *= -1;
+      context.fillStyle = "rgba(77, 158, 235, 0.5)";
+      context.beginPath();
+      context.arc(point.x, point.y, 1.1, 0, Math.PI * 2);
+      context.fill();
+    });
+
+    for (let first = 0; first < points.length; first += 1) {
+      for (let second = first + 1; second < points.length; second += 1) {
+        const a = points[first];
+        const b = points[second];
+        const distance = Math.hypot(a.x - b.x, a.y - b.y);
+        if (distance >= 120) continue;
+        context.strokeStyle = `rgba(54, 139, 221, ${(1 - distance / 120) * 0.11})`;
+        context.beginPath();
+        context.moveTo(a.x, a.y);
+        context.lineTo(b.x, b.y);
+        context.stroke();
+      }
+    }
+    requestAnimationFrame(drawParticles);
+  }
+
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+  drawParticles();
+}
