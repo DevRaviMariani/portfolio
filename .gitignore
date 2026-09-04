@@ -1,2 +1,8 @@
+.next/
+out/
+node_modules/
+.vercel/
 portfolio-site*.tar.gz
-
+*.log
+.env*.local
+*.tsbuildinfo

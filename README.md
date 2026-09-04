@@ -1,16 +1,26 @@
-# Portfólio — Ravi Mariani
+# Ravi Mariani — Portfólio V2
 
-Primeira versão do portfólio profissional, construída em HTML, CSS e JavaScript puro.
+Portfólio profissional construído com Next.js, React, TypeScript e Tailwind CSS.
 
-## Antes de publicar
+## Desenvolvimento
 
-Atualize no `index.html`:
+```bash
+pnpm install
+pnpm dev
+```
 
-- endereço de e-mail;
-- link do LinkedIn;
-- link do GitHub;
-- texto público definitivo do PAEEJA;
-- dados de formação, experiência e certificações;
-- endereço do site nos metadados sociais, quando o domínio estiver definido.
+Acesse `http://localhost:3000`.
 
-O projeto não depende de bibliotecas externas e pode ser publicado em qualquer hospedagem estática.
+## Qualidade e produção
+
+```bash
+pnpm lint
+pnpm typecheck
+pnpm build
+```
+
+O build gera uma exportação estática em `out/`, compatível com GitHub Pages. Na Vercel, basta importar este repositório; o framework e os comandos são detectados automaticamente.
+
+## Evolução futura
+
+Projetos, Diário de Desenvolvimento e Laboratório serão adicionados somente quando houver conteúdo real. Os dados editoriais compartilhados ficam centralizados em `lib/constants.ts`.
