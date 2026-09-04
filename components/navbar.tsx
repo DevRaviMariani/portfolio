@@ -32,7 +32,7 @@ export function Navbar() {
     <header className={cn("fixed inset-x-0 top-0 z-50 transition-all duration-300", scrolled && "border-b border-border/80 bg-background/82 backdrop-blur-xl")}>
       <nav className="container-shell flex h-18 items-center justify-between" aria-label="Navegação principal">
         <a href="#inicio" className="relative z-50 text-xl font-semibold tracking-[-0.05em]" aria-label="Ravi Mariani — início">
-          RM<span className="text-accent">.</span>
+          RM<span className="text-accent">.</span><span className="ml-3 hidden border-l border-border pl-3 text-xs font-medium tracking-normal text-muted-foreground sm:inline">Ravi Mariani</span>
         </a>
 
         <div className="hidden items-center gap-7 lg:flex">

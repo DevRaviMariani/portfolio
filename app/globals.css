@@ -123,17 +123,14 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .text-link { position: relative; padding-bottom: 0.3rem; }
 
 .hero-visual {
-  --pointer-x: 50%;
-  --pointer-y: 50%;
   position: relative;
   aspect-ratio: 1 / 0.92;
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: 16px;
   background:
-    radial-gradient(circle at var(--pointer-x) var(--pointer-y), var(--accent-soft), transparent 32%),
+    radial-gradient(circle at 32% 38%, var(--accent-soft), transparent 34%),
     var(--surface);
-  transition: background 150ms ease;
 }
 
 .hero-grid {

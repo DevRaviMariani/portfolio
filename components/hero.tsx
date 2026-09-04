@@ -8,11 +8,14 @@ export function Hero() {
   return (
     <section id="inicio" className="container-shell grid min-h-svh scroll-mt-20 items-center gap-14 pb-16 pt-28 lg:grid-cols-[1.08fr_.92fr] lg:gap-20 lg:py-28">
       <Reveal className="max-w-3xl">
-        <p className="eyebrow">DESENVOLVEDOR DE SOFTWARE</p>
+        <p className="eyebrow">RAVI MARIANI / DESENVOLVEDOR DE SOFTWARE</p>
         <h1 className="mt-7 text-[clamp(2.75rem,7vw,4.75rem)] font-medium leading-[.98] tracking-[-0.06em] text-balance">
-          Transformo ideias e problemas <span className="text-muted-foreground">em soluções digitais.</span>
+          Ravi Mariani<span className="text-accent">.</span>
         </h1>
-        <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+        <p className="mt-7 max-w-2xl text-[clamp(1.55rem,3vw,2.15rem)] font-medium leading-tight tracking-[-0.035em]">
+          Transformo ideias e problemas <span className="text-muted-foreground">em soluções digitais.</span>
+        </p>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
           Desenvolvimento web, sistemas e exploração de soluções com Inteligência Artificial.
         </p>
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
