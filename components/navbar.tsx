@@ -12,7 +12,9 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 16);
+    };
 
     onScroll();
 
@@ -45,7 +47,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        "fixed inset-x-0 top-0 z-50",
 
         scrolled &&
           !open &&
@@ -62,7 +64,7 @@ export function Navbar() {
         {/* LOGO */}
         <a
           href="#inicio"
-          className="relative z-[60] text-xl font-semibold tracking-[-0.05em]"
+          className="relative z-[70] text-xl font-semibold tracking-[-0.05em]"
           aria-label="Ravi Mariani — início"
           onClick={() => setOpen(false)}
         >
@@ -88,7 +90,7 @@ export function Navbar() {
         </div>
 
         {/* AÇÕES */}
-        <div className="relative z-[60] flex items-center gap-1">
+        <div className="relative z-[70] flex items-center gap-1">
           <Button
             asChild
             variant="ghost"
@@ -128,17 +130,11 @@ export function Navbar() {
         <div
           id="mobile-menu"
           className={cn(
-            /*
-             * Fundo completamente sólido.
-             * z-index inferior apenas ao header/botões.
-             */
-            "fixed inset-0 z-[55] flex translate-x-full flex-col bg-background px-5 pb-8 pt-28 transition-transform duration-300 lg:hidden",
-
+            "fixed inset-0 z-[60] flex translate-x-full flex-col bg-background px-5 pb-8 pt-28 transition-transform duration-200 ease-out lg:hidden",
             open && "translate-x-0"
           )}
           aria-hidden={!open}
         >
-          {/* LINKS */}
           <div className="flex flex-col border-t border-border">
             {navigation.map((item, index) => (
               <a
@@ -166,7 +162,6 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* GITHUB */}
           <a
             href={socialLinks.github}
             target="_blank"
