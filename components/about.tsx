@@ -3,8 +3,8 @@ import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 
 const education = [
+  { institution: "UCSAL", course: "Análise e Desenvolvimento de Sistemas", status: "3 / 5 semestres" },
   { institution: "SENAI", course: "Técnico em Desenvolvimento de Sistemas", status: "Concluído" },
-  { institution: "UCSAL", course: "Análise e Desenvolvimento de Sistemas", status: "Em andamento" },
 ] as const;
 
 export function About() {
@@ -16,7 +16,7 @@ export function About() {
           <Reveal className="space-y-6 text-lg leading-relaxed text-muted-foreground">
             <p><strong className="font-medium text-foreground">Técnico em Desenvolvimento de Sistemas pelo SENAI</strong> e graduando em Análise e Desenvolvimento de Sistemas na Universidade Católica do Salvador (UCSAL).</p>
             <p>Atuo com desenvolvimento de software na Secretaria Municipal de Inovação e Tecnologia (SEMIT), com experiência prática em <strong className="font-medium text-foreground">aplicações web, WordPress, PHP, JavaScript e bancos de dados</strong>.</p>
-            <p>Tenho especial interesse em <strong className="font-medium text-foreground">Inteligência Artificial, automação e produtos digitais</strong>, transformando aprendizado técnico e problemas reais em soluções que possam ser construídas, testadas e evoluídas.</p>
+            <p>Direciono meus estudos à <strong className="font-medium text-foreground">construção de sistemas com Inteligência Artificial</strong>, com interesse especial em AI in Education (AIED) e na aplicação responsável de IA a soluções para educação e ambientes web.</p>
           </Reveal>
           <div className="border-t border-border">
             {education.map((item, index) => (

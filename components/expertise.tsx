@@ -10,7 +10,7 @@ export function Expertise() {
   return (
     <section id="atuacao" className="section-space scroll-mt-16 bg-surface">
       <div className="container-shell">
-        <Reveal><SectionHeading number="02" label="ATUAÇÃO" title="Tecnologia aplicada a produtos, sistemas e experiências." description="Áreas que orientam minha prática e o próximo ciclo da minha evolução profissional." /></Reveal>
+        <Reveal><SectionHeading number="02" label="ATUAÇÃO" title="Onde consigo gerar valor." description="Três frentes que conectam minha experiência atual, meu repertório técnico e o que estou desenvolvendo para o próximo ciclo profissional." /></Reveal>
         <div className="grid gap-4 lg:grid-cols-12">
           {expertise.map((item, index) => {
             const Icon = icons[index];

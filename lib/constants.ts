@@ -1,6 +1,7 @@
 export const navigation = [
   { label: "Sobre", href: "#sobre" },
   { label: "Atuação", href: "#atuacao" },
+  { label: "Projetos", href: "#projetos" },
   { label: "Stack", href: "#stack" },
   { label: "Experiência", href: "#experiencia" },
   { label: "Contato", href: "#contato" },
@@ -11,6 +12,8 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/ravi-mariani-75146231b/",
   instagram: "https://www.instagram.com/devravimariani/",
   email: "mailto:ravibrandao22@gmail.com",
+  whatsapp: "https://wa.me/5571993416664",
+  portfolio: "https://devravimariani.github.io/portfolio/",
 } as const;
 
 export const expertise = [
@@ -32,10 +35,10 @@ export const expertise = [
   },
   {
     number: "03",
-    title: "Inteligência Artificial & Automação",
+    title: "Inteligência Artificial & Educação",
     description:
-      "Estudo e experimentação com Inteligência Artificial aplicada a software, automação de processos e novas experiências digitais.",
-    technologies: ["Python", "LLMs", "APIs", "Automação"],
+      "Estudo e aprofundamento no uso de IA para construção de prompts e apoio ao desenvolvimento, suporte e manutenção de sites e sistemas, com interesse especial em AI in Education (AIED).",
+    technologies: ["Sistemas de IA", "Engenharia de prompts", "AIED", "Ambiente web"],
     className: "lg:col-span-12",
   },
 ] as const;
@@ -45,6 +48,6 @@ export const stack = [
   { category: "Backend", technologies: ["PHP", "Laravel", "Java"] },
   { category: "Dados", technologies: ["MySQL", "PostgreSQL"] },
   { category: "Web", technologies: ["WordPress", "APIs"] },
-  { category: "IA & Automação", technologies: ["Python", "LLMs", "Automação"] },
+  { category: "IA & Educação", technologies: ["Python", "LLMs", "Engenharia de prompts", "AIED"] },
   { category: "Ferramentas", technologies: ["Git", "GitHub", "Figma"] },
 ] as const;

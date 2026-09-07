@@ -1,6 +1,6 @@
 "use client";
 
-import { Code2, ExternalLink, Menu, X } from "lucide-react";
+import { Code2, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { navigation, socialLinks } from "@/lib/constants";
 import { cn } from "@/lib/utils";
@@ -126,15 +126,15 @@ export function Navbar() {
           </Button>
         </div>
 
-        {/* MENU MOBILE */}
-        <div
-          id="mobile-menu"
-          className={cn(
-            "fixed inset-0 z-[60] flex translate-x-full flex-col bg-background px-5 pb-8 pt-28 transition-transform duration-200 ease-out lg:hidden",
-            open && "translate-x-0"
-          )}
-          aria-hidden={!open}
-        >
+        <button
+          type="button"
+          aria-label="Fechar menu"
+          tabIndex={open ? 0 : -1}
+          onClick={() => setOpen(false)}
+          className={cn("fixed inset-x-0 bottom-0 top-18 z-30 bg-background/55 opacity-0 backdrop-blur-[2px] transition-opacity duration-200 pointer-events-none lg:hidden", open && "pointer-events-auto opacity-100")}
+        />
+
+        <div id="mobile-menu" className={cn("fixed inset-x-0 top-18 z-40 -translate-y-[calc(100%+5rem)] border-b border-border bg-background px-5 shadow-2xl transition-transform duration-300 lg:hidden", open && "translate-y-0")} aria-hidden={!open}>
           <div className="flex flex-col border-t border-border">
             {navigation.map((item, index) => (
               <a
@@ -161,26 +161,6 @@ export function Navbar() {
               </a>
             ))}
           </div>
-
-          <a
-            href={socialLinks.github}
-            target="_blank"
-            rel="noreferrer"
-            tabIndex={open ? 0 : -1}
-            className="mt-auto flex min-h-12 items-center gap-2 text-sm text-muted-foreground"
-          >
-            <Code2
-              className="size-4"
-              aria-hidden="true"
-            />
-
-            GitHub
-
-            <ExternalLink
-              className="size-3.5"
-              aria-hidden="true"
-            />
-          </a>
         </div>
       </nav>
     </header>

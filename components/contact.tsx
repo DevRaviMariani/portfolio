@@ -1,10 +1,11 @@
-import { ArrowUpRight, AtSign, BriefcaseBusiness, Code2, Mail } from "lucide-react";
+import { ArrowUpRight, AtSign, BriefcaseBusiness, Code2, Mail, MessageCircle } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
 import { socialLinks } from "@/lib/constants";
 
 const links = [
   { label: "E-mail", value: "ravibrandao22@gmail.com", href: socialLinks.email, icon: Mail },
+  { label: "WhatsApp", value: "+55 71 99341-6664", href: socialLinks.whatsapp, icon: MessageCircle },
   { label: "GitHub", value: "DevRaviMariani", href: socialLinks.github, icon: Code2 },
   { label: "LinkedIn", value: "Ravi Mariani", href: socialLinks.linkedin, icon: BriefcaseBusiness },
   { label: "Instagram", value: "@devravimariani", href: socialLinks.instagram, icon: AtSign },
@@ -15,11 +16,12 @@ export function Contact() {
     <section id="contato" className="contact-section scroll-mt-0">
       <div className="container-shell grid gap-16 lg:grid-cols-[1.1fr_.9fr] lg:items-end lg:gap-24">
         <Reveal>
-          <p className="eyebrow">TEM UM PROJETO OU DESAFIO?</p>
-          <h2 className="mt-7 text-[clamp(3rem,7vw,5.75rem)] font-medium leading-[.92] tracking-[-0.065em]">Vamos transformar sua ideia <span className="text-muted-foreground">em uma solução clara.</span></h2>
-          <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground">Conte-me o contexto, o problema e o resultado que você procura. A primeira conversa pode começar por e-mail.</p>
+          <p className="section-label"><span>06</span> / CONTATO</p>
+          <p className="eyebrow mt-7">OPORTUNIDADE, IDEIA OU DESAFIO?</p>
+          <h2 className="mt-7 text-[clamp(3rem,7vw,5.75rem)] font-medium leading-[.92] tracking-[-0.065em]">Vamos iniciar <span className="text-muted-foreground">uma boa conversa.</span></h2>
+          <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground">Para oportunidades profissionais, colaborações ou novos projetos, conte-me o contexto e o que você pretende construir.</p>
           <Button asChild className="mt-9">
-            <a href={socialLinks.email}>Iniciar uma conversa <ArrowUpRight className="size-4" aria-hidden="true" /></a>
+            <a href={socialLinks.whatsapp} target="_blank" rel="noreferrer">Conversar pelo WhatsApp <ArrowUpRight className="size-4" aria-hidden="true" /></a>
           </Button>
           <p className="mt-5 font-mono text-xs text-muted-foreground">ravibrandao22@gmail.com</p>
         </Reveal>
