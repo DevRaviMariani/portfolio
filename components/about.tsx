@@ -14,9 +14,9 @@ export function About() {
         <Reveal><SectionHeading number="01" label="SOBRE" title="Aprendizado técnico com aplicação no mundo real." /></Reveal>
         <div className="grid gap-14 lg:grid-cols-[1.05fr_.95fr] lg:gap-24">
           <Reveal className="space-y-6 text-lg leading-relaxed text-muted-foreground">
-            <p>Sou Técnico em Desenvolvimento de Sistemas pelo SENAI e atualmente curso Análise e Desenvolvimento de Sistemas na Universidade Católica do Salvador (UCSAL).</p>
-            <p>Atuo com desenvolvimento de software na Secretaria Municipal de Inovação e Tecnologia (SEMIT), onde tenho contato prático com desenvolvimento e manutenção de aplicações web, WordPress, PHP, JavaScript, bancos de dados e diferentes ferramentas do ecossistema web.</p>
-            <p>Tenho especial interesse em Inteligência Artificial, automação e desenvolvimento de produtos digitais, buscando transformar aprendizado técnico e problemas reais em soluções que possam ser construídas, testadas e evoluídas.</p>
+            <p><strong className="font-medium text-foreground">Técnico em Desenvolvimento de Sistemas pelo SENAI</strong> e graduando em Análise e Desenvolvimento de Sistemas na Universidade Católica do Salvador (UCSAL).</p>
+            <p>Atuo com desenvolvimento de software na Secretaria Municipal de Inovação e Tecnologia (SEMIT), com experiência prática em <strong className="font-medium text-foreground">aplicações web, WordPress, PHP, JavaScript e bancos de dados</strong>.</p>
+            <p>Tenho especial interesse em <strong className="font-medium text-foreground">Inteligência Artificial, automação e produtos digitais</strong>, transformando aprendizado técnico e problemas reais em soluções que possam ser construídas, testadas e evoluídas.</p>
           </Reveal>
           <div className="border-t border-border">
             {education.map((item, index) => (

@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroVisual } from "@/components/hero-visual";
 import { Reveal } from "@/components/reveal";
@@ -26,9 +26,6 @@ export function Hero() {
             <a href={socialLinks.github} target="_blank" rel="noreferrer">GitHub <ArrowUpRight className="size-4" aria-hidden="true" /></a>
           </Button>
         </div>
-        <p className="mt-10 flex items-center gap-2 font-mono text-xs uppercase tracking-[.12em] text-muted-foreground">
-          <MapPin className="size-4 text-accent" aria-hidden="true" /> Salvador, Bahia — Brasil
-        </p>
       </Reveal>
       <Reveal delay={0.08} className="mx-auto w-full max-w-xl lg:max-w-none">
         <HeroVisual />

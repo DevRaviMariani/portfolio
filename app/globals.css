@@ -369,6 +369,17 @@ button {
   }
 }
 
+@media (max-width: 1023px) {
+  .site-header {
+    border-bottom: 1px solid var(--border);
+    background: var(--background);
+    background: color-mix(in srgb, var(--background) 96%, transparent);
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--background) 82%, transparent);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

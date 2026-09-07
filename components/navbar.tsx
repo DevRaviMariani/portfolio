@@ -47,7 +47,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50",
+        "site-header fixed inset-x-0 top-0 z-50 transition-all duration-300",
 
         scrolled &&
           !open &&
@@ -112,7 +112,7 @@ export function Navbar() {
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden"
+            className="border border-border bg-surface shadow-sm hover:bg-surface-hover lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
